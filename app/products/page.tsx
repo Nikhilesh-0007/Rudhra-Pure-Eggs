@@ -67,7 +67,7 @@ export default function ProductsPage() {
       />
 
       {/* Header */}
-      <section className="pt-24 pb-16 bg-white border-b border-border-light">
+      <section className="pt-32 lg:pt-40 pb-16 bg-white border-b border-border-light">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

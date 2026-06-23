@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white pb-20">
       {/* Header */}
-      <section className="pt-24 pb-16 bg-secondary">
+      <section className="pt-32 lg:pt-40 pb-16 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

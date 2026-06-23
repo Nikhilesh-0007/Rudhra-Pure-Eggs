@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white pb-20">
       {/* Header */}
-      <section className="pt-24 pb-16 bg-secondary">
+      <section className="pt-32 lg:pt-40 pb-16 bg-secondary">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function AboutPage() {
               >
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                 <Image
-                  src="/founder2.png"
+                  src="/founder3.png"
                   alt="Rama Adapa - Founder of Rudhra Farm"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
