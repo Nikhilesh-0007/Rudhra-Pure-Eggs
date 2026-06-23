@@ -83,8 +83,11 @@ export default function AboutPage() {
 
                 <div className="border-t border-border-light pt-8 mt-10">
                   <h3 className="text-2xl font-heading font-bold text-text-dark mb-1">Rama Adapa</h3>
-                  <p className="text-text-dark/60 font-medium tracking-wide uppercase text-sm">
+                  <p className="text-text-dark/60 font-medium tracking-wide uppercase text-sm mb-1">
                     Founder, Rudhra Farm
+                  </p>
+                  <p className="text-accent font-semibold text-sm">
+                    Since 2023
                   </p>
                 </div>
               </motion.div>

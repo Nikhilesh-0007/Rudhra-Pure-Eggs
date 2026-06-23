@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
           {/* Brand Col */}
           <div>
-            <Link href="/" className="flex flex-col mb-4 inline-block">
+            <Link href="/" className="inline-flex flex-col mb-4">
               <span className="font-heading font-bold text-3xl tracking-tight text-white">
                 Rudhra Farm
               </span>
@@ -77,7 +77,11 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-xl mb-6 text-white">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
+              <li className="flex flex-col mb-2 pb-2 border-b border-white/10">
+                <span className="text-white/60 text-sm uppercase tracking-wider font-semibold mb-1">Founder</span>
+                <span className="text-white font-heading text-lg font-bold">Rama Adapa</span>
+              </li>
+              <li className="flex items-start space-x-3 mt-4">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <span className="text-white/80 leading-snug">
                   Saradhi Road, Vanjarampeta,<br />
@@ -109,9 +113,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm">
-          <p>&copy; {currentYear} Rudhra Farm (SNG Groups). All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Founder: Rama Adapa</p>
+        <div className="pt-8 border-t border-white/20 flex justify-center md:justify-start items-center text-white/60 text-sm">
+          <div className="flex flex-col sm:flex-row items-center text-center sm:text-left sm:space-x-2">
+            <p>&copy; {currentYear} Rudhra Farm (SNG Groups). All rights reserved.</p>
+            <span className="hidden sm:inline">|</span>
+            <p className="mt-1 sm:mt-0">
+              Developed by <a href="https://www.instagram.com/staffarc?igsh=NGI1ajBjank5aWF3" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors font-semibold tracking-wide">Staffarc</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
