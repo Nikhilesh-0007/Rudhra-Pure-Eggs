@@ -13,7 +13,8 @@ const products = [
     description: "Authentic country eggs from free-ranging hens. Rich in protein, healthy fats, and a deep golden yolk full of natural flavor.",
     benefits: ["Rich in Omega-3", "Deep golden yolk", "100% Organic feed", "High protein content"],
     popular: true,
-    image: "/natuegg1.png"
+    image: "/natuegg1.png",
+    price: "₹20 / piece"
   },
   {
     id: "white-eggs",
@@ -21,7 +22,8 @@ const products = [
     description: "Daily fresh white eggs from healthy hens. Perfect for everyday nutrition, baking, and cooking.",
     benefits: ["Collected daily", "Strict quality checks", "Clean and safe", "Affordable nutrition"],
     popular: false,
-    image: "/image.png"
+    image: "/image.png",
+    price: "₹10 / piece"
   },
   {
     id: "brown-eggs",
@@ -29,7 +31,8 @@ const products = [
     description: "Nutritious brown eggs laid by specialized breeds. Known for their robust shells and rich taste.",
     benefits: ["Thicker shells", "Rich flavor profile", "Farm fresh daily", "Nutrient-dense"],
     popular: false,
-    image: "/nattuegg.png"
+    image: "/nattuegg.png",
+    price: "₹20 / piece"
   },
   {
     id: "double-yolk",
@@ -37,7 +40,8 @@ const products = [
     description: "Extra large premium eggs that contain two yolks. A rare treat perfect for a hearty breakfast.",
     benefits: ["Double the protein", "Extra large size", "Great for baking", "Premium quality"],
     popular: false,
-    image: "/doubleegg1.png"
+    image: "/doubleegg1.png",
+    price: "₹25 / piece"
   },
   {
     id: "naatu-chicken",
@@ -45,7 +49,17 @@ const products = [
     description: "Naturally raised country chicken with tender meat and authentic taste. Perfect for traditional curries and roasts.",
     benefits: ["No artificial growth", "Tender and flavorful", "Stress-free raising", "Authentic village taste"],
     popular: true,
-    image: "/nattuc.png"
+    image: "/nattuc.png",
+    price: "Market Price"
+  },
+  {
+    id: "farm-milk",
+    name: "Farm Fresh Milk",
+    description: "Pure, unadulterated farm fresh milk. Delivered daily for your health and nutrition.",
+    benefits: ["100% Pure", "Freshly Milked", "No Preservatives", "Rich in Calcium"],
+    popular: false,
+    image: "/milk.png",
+    price: "₹80 / liter"
   }
 ];
 
@@ -60,9 +74,9 @@ export default function ProductsPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-secondary pb-20">
-      <WhatsAppInquiryModal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
+      <WhatsAppInquiryModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
         defaultProduct={selectedProduct}
       />
 
@@ -75,7 +89,7 @@ export default function ProductsPage() {
             className="max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-dark mb-6">
-              Our Premium Products
+              Our Products
             </h1>
             <p className="text-lg text-text-dark/70 leading-relaxed">
               Explore our range of 100% organic, farm-fresh eggs and poultry. Handpicked and delivered directly to you.
@@ -89,7 +103,7 @@ export default function ProductsPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {products.map((product, idx) => (
-              <motion.div 
+              <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -104,11 +118,11 @@ export default function ProductsPage() {
                     </div>
                   )}
                   {product.image ? (
-                    <Image 
-                      src={product.image} 
-                      alt={product.name} 
-                      fill 
-                      className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
@@ -117,31 +131,35 @@ export default function ProductsPage() {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="p-8 flex flex-col flex-1">
-                  <h3 className="text-2xl font-heading font-bold text-text-dark mb-3">{product.name}</h3>
+                  <h3 className="text-2xl font-heading font-bold text-text-dark mb-1">{product.name}</h3>
+                  <div className="text-accent font-bold text-lg mb-3">{product.price}</div>
                   <p className="text-text-dark/70 mb-6 leading-relaxed min-h-[80px]">
                     {product.description}
                   </p>
-                  
+
                   <div className="mb-8 flex-1">
                     <h4 className="text-sm font-semibold text-text-dark uppercase tracking-wider mb-3">Key Benefits</h4>
                     <ul className="space-y-2">
                       {product.benefits.map((benefit, bIdx) => (
-                         <li key={bIdx} className="flex items-start text-text-dark/80 text-sm">
-                           <Check className="w-4 h-4 text-primary shrink-0 mr-2 mt-0.5" />
-                           {benefit}
-                         </li>
+                        <li key={bIdx} className="flex items-start text-text-dark/80 text-sm">
+                          <Check className="w-4 h-4 text-primary shrink-0 mr-2 mt-0.5" />
+                          {benefit}
+                        </li>
                       ))}
                     </ul>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => handleOrder(product.name)}
-                    className="w-full bg-primary text-white hover:bg-primary/90 px-4 py-3.5 rounded-xl font-semibold transition-all shadow-md active:scale-[0.98]"
+                    className="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3.5 rounded-xl font-medium transition-all shadow-sm flex items-center justify-center text-lg mt-auto"
                   >
                     Order on WhatsApp
                   </button>
+                  <p className="text-center text-xs text-text-dark/50 mt-3 font-semibold uppercase tracking-wide">
+                    Cash on Delivery Available
+                  </p>
                 </div>
               </motion.div>
             ))}
